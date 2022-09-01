@@ -13,6 +13,7 @@ import Search from './components/Search';
 
 function App() {
   const [foods, setFoods] = useState(allFoods)
+  const [showForm, setShowForm] = useState(false)
   // const generatedId = uuid()
   // console.log(foods)
 
@@ -31,10 +32,8 @@ function App() {
   return (
     <div className="App">
       <Search foods={foods} setFoods={setFoods}/>
-      <AddFoodForm addFood={addNewFood}/>
-
-      <Button> Hide Form / Add New Food </Button>
-
+      <Button onClick={() => setShowForm(!showForm)}> {showForm ? "Hide Form" : "Add New Food"} </Button>
+      {showForm && <AddFoodForm addFood={addNewFood}/>}
       <Divider>Food List</Divider>
       { foods.map( food => {
         return (
