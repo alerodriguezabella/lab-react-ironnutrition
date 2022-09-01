@@ -6,9 +6,6 @@ import { Card, Col, Button } from 'antd';
 
 // Iteration 2
 function FoodBox({name, calories, image, servings, removeFood}) {
-
-
-
   return (
     <Col>
       <Card

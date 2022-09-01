@@ -9,6 +9,7 @@ import { useState } from 'react'
 import { v4 as uuid } from 'uuid';
 import FoodBox from './components/FoodBox';
 import AddFoodForm from './components/AddFoodForm';
+import Search from './components/Search';
 
 function App() {
   const [foods, setFoods] = useState(allFoods)
@@ -29,10 +30,10 @@ function App() {
 
   return (
     <div className="App">
+      <Search foods={foods} setFoods={setFoods}/>
       <AddFoodForm addFood={addNewFood}/>
-      <Button> Hide Form / Add New Food </Button>
 
-      {/* Display Search component here */}
+      <Button> Hide Form / Add New Food </Button>
 
       <Divider>Food List</Divider>
       { foods.map( food => {

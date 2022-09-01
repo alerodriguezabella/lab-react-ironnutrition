@@ -20,7 +20,7 @@ function AddFoodForm({addFood}) {
   const handleSubmit = e => {
     e.preventDefault()
     const newFood = {name: formName, image: formImage, calories: formCalories, servings: formServings}
-    console.log(newFood)
+    // console.log(newFood)
     addFood(newFood)
 
     // Reset the state
